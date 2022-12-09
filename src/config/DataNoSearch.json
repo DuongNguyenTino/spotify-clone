@@ -1,0 +1,84 @@
+{
+    "data" : [
+        {
+            "title":"Nhìn Lại 2022",
+            "color":"#8400e7",
+            "thumbnailM":"https://wrapped-images.spotifycdn.com/image/browse-card/wrapped-temp-card.jpg"
+        },
+        {
+            "title":"Podcasts",
+            "color":"#e13300",
+            "thumbnailM":"https://i.scdn.co/image/567158eb895ad26718a814345af0fc43ee785ec5"
+        },
+        {
+            "title":"Dành Cho Bạn",
+            "color":"#1e3264",
+            "thumbnailM": "https://t.scdn.co/images/ea364e99656e46a096ea1df50f581efe"
+        },
+        {
+            "title":"Mới Phát Hành",
+            "color":"#e8115b",
+            "thumbnailM": "https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112"
+        },
+        {
+            "title":"Nhạc Việt",
+            "color":"#608108",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005caf55dfb53724670e4db6cee444"
+        },
+        {
+            "title":"Pop",
+            "color":"#148a08",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768"
+        },
+        {
+            "title":"K-Pop",
+            "color":"#148a08",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005caf013ee3c983e6f60bf28bad5a"
+        },
+        {
+            "title":"Hip-Hop",
+            "color":"#bc5900",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005caf7e11c8413dc33c00740579c1"
+        },
+        {
+            "title":"Bảng xếp hạng",
+            "color":"#8d67ab",
+            "thumbnailM": "https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"
+        },
+        {
+            "title":"Sự kiện trực tiếp",
+            "color":"#8d67ab",
+            "thumbnailM": "https://concerts.spotifycdn.com/images/live-events_category-image.jpg"
+        },
+        {
+            "title":"Fresh Finds",
+            "color":"#ff0090",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005cafcc1499bbb8565f490858c2bc"
+        },
+        {
+            "title":"EQUAL",
+            "color":"#056952",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005caf9ed6e364e8839210dc4dbff7"
+        },
+        {
+            "title":"Pride",
+            "color":"#d84000",
+            "thumbnailM": "https://t.scdn.co/images/5387193aad9f42cea8184a5e55441dbb"
+        },
+        {
+            "title":"RADAR",
+            "color":"#777777",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005cafdb2aa9c7caea42f900721497"
+        },
+        {
+            "title":"Khám phá",
+            "color":"#8d67ab",
+            "thumbnailM": "https://t.scdn.co/images/d0fb2ab104dc4846bdc56d72b0b0d785.jpeg"
+        },
+        {
+            "title":"Karaoke",
+            "color":"#503750",
+            "thumbnailM": "https://i.scdn.co/image/ab67fb8200005caf8eb00a9a2c00093ccde516c6"
+        }
+    ]
+}
