@@ -18,6 +18,7 @@ const Playing = () => {
     const srcAudio = useSelector((state) => state.audio.srcAudio)
     const isLoop = useSelector((state) => state.audio.isLoop)
     const isShuffle = useSelector((state) => state.audio.isShuffle)
+    const isPlay = useSelector((state) => state.audio.isPlay)
 
     const currentIndexPlaylist = useSelector(
         (state) => state.audio.currentIndexPlaylist
@@ -86,7 +87,7 @@ const Playing = () => {
                 src={srcAudio}
                 className="hidden"
                 loop={isLoop}
-                autoPlay={true}
+                autoPlay={isPlay}
                 hidden
                 onTimeUpdate={() => {
                     if (audioRef.current) {
@@ -95,7 +96,7 @@ const Playing = () => {
                 }}
                 onLoadedData={() => {
                     if (audioRef.current) {
-                        dispatch(changeIconPlay(true))
+                        dispatch(changeIconPlay(isPlay))
                         dispatch(setDuration(audioRef.current.duration))
                     }
                 }}
