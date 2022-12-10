@@ -16,7 +16,7 @@ const Search = () => {
 
     return (
         <div>
-            <div className='mt-8 mx-[5vw]'>
+            <div className='mt-24 mx-[5vw]'>
                 {dataSearch && dataSearch.songs ? 
                 <>
                     <div className='pb-6 text-lg text-[color:var(--text-base)] font-bold mb-8 border-b border-[color:var(--color-primary)]'>

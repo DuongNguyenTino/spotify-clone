@@ -18,7 +18,6 @@ const Playing = () => {
     const srcAudio = useSelector((state) => state.audio.srcAudio)
     const isLoop = useSelector((state) => state.audio.isLoop)
     const isShuffle = useSelector((state) => state.audio.isShuffle)
-    const isPlay = useSelector((state) => state.audio.isPlay)
 
     const currentIndexPlaylist = useSelector(
         (state) => state.audio.currentIndexPlaylist

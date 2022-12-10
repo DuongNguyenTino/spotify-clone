@@ -6,10 +6,12 @@ import Navbar from './components/Navbar'
 
 function App() {
     return (
-        <div className='lg:ml-80 ml-64 mt-16 mb-32 overflow-hidden'>
+        <div className='overflow-hidden'>
             <Sidebar/>
             <Navbar />
-            <Router />
+            <div className='main lg:ml-80 ml-64 mt-16 mb-32'>
+                <Router />
+            </div>
             <Playing />
         </div>
     )

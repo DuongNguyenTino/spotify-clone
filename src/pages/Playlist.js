@@ -29,7 +29,7 @@ const Playlist = () => {
 
     return (
         <>
-            <div className="mx-[5vw] mt-20">
+            <div className="mx-[5vw] mt-24">
                 {detailPlaylist ? (
                     <>
                         <div className="flex md:flex-row sm:flex-col my-[72px]">

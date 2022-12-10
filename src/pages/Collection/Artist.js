@@ -11,7 +11,7 @@ const Artist = () => {
     return (
         <main className="mt-16">
             <div className="flex flex-col items-center">
-                <div className="mb-12">
+                <div className="mb-12 mt-20">
                     <ArtistIcon setColor="white" setHeight="64" setWidth="64" />
                 </div>
                 <div className="mb-8 text-3xl font-bold text-[color:var(--text-highlight)]">
