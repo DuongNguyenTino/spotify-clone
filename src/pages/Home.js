@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <>
             <main className="">
-                <div className="lg:ml-6 md:ml-[-36px] mr-6 pt-1">
+                <div className="lg:ml-6 md:ml-[36px] mr-6 pt-1">
                     {dataHome && loader ? (
                         dataHome.map((e, i) => (
                             <div key={i}>

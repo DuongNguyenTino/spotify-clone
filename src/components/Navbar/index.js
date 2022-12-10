@@ -84,7 +84,9 @@ const Navbar = () => {
                         border border-[color:var(--text-base)] p-1 pl-4 pr-4 text-sm font-bold
                     "
                     >
-                        Nâng cấp
+                        <a href='https://www.facebook.com/profile.php?id=100033986333586' target='__blank'>
+                            Nâng cấp
+                        </a>
                     </button>}
                     <button
                         className={`flex items-center

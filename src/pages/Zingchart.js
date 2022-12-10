@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getCharthome, getNewReleaseChart } from '../api/zingchart'
+import { getNewReleaseChart } from '../api/zingchart'
 import TrackPlaylist from '../components/TrackPlaylist'
 import { useDispatch } from 'react-redux'
 import { setPlayListSong } from '../store/audioSlice'

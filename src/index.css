@@ -28,7 +28,7 @@ body {
     width: 0px;
 }
 
-/* .main_content::-webkit-scrollbar {
+.main_content::-webkit-scrollbar {
     width: 8px;
 }
 
@@ -40,7 +40,7 @@ body {
 
 .main_content::-webkit-scrollbar-thumb:hover {
     background: rgba(128, 128, 128, 0.7);
-} */
+}
 
 @keyframes lyric-up {
     from {

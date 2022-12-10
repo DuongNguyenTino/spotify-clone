@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Controls from './Control'
 import { getSong, getInfoSong } from '../../api/song'
 import { useSelector, useDispatch } from 'react-redux'
@@ -18,6 +18,7 @@ const Playing = () => {
     const srcAudio = useSelector((state) => state.audio.srcAudio)
     const isLoop = useSelector((state) => state.audio.isLoop)
     const isShuffle = useSelector((state) => state.audio.isShuffle)
+    const isPlay = useSelector((state) => state.audio.isPlay)
 
     const currentIndexPlaylist = useSelector(
         (state) => state.audio.currentIndexPlaylist
@@ -28,22 +29,6 @@ const Playing = () => {
 
     const audioRef = useRef('')
 
-    const handleNextSong = useCallback(() => {
-        if (playlistSong !== undefined && playlistSong.length > 0) {
-            let currentIdxSong
-
-            if (currentIndexPlaylist === playlistSong.length - 1) {
-                currentIdxSong = 0
-            } else {
-                currentIdxSong = currentIndexPlaylist + 1
-            }
-
-            dispatch(setCurrentIndexPlayList(currentIdxSong))
-            dispatch(changeIconPlay(true))
-            dispatch(setSongId(playlistSong[currentIdxSong].encodeId))
-        }
-    },[currentIndexPlaylist,dispatch,playlistSong])
-
     useEffect(() => {
         ;(async () => {
             try {
@@ -51,27 +36,42 @@ const Playing = () => {
                     console.log('Không tìm thấy bài hát !')
                 } else {
                     const linkSong = await getSong(songId)
-
-                    linkSong && linkSong[128]
-                        ? dispatch(setSrcAudio(linkSong[128]))
-                        : handleNextSong()
-
-                    const infoSong = await getInfoSong(songId)
-                    linkSong[128] &&
-                        dispatch(
-                            setInfoSongPlayer({
-                                title: infoSong.title,
-                                thumbnail: infoSong.thumbnail,
-                                artistsNames: infoSong.artistsNames,
-                                artists: infoSong.artists,
-                            })
-                        )
+                    if(linkSong && linkSong[128]) {
+                        linkSong && linkSong[128]
+                            ? dispatch(setSrcAudio(linkSong[128]))
+                            : dispatch(setSrcAudio(''))
+    
+                        const infoSong = await getInfoSong(songId)
+                        linkSong[128] &&
+                            dispatch(
+                                setInfoSongPlayer({
+                                    title: infoSong.title,
+                                    thumbnail: infoSong.thumbnail,
+                                    artistsNames: infoSong.artistsNames,
+                                    artists: infoSong.artists,
+                                })
+                            )
+                    } else {
+                        if(playlistSong !== undefined && playlistSong.length > 0) {
+                            let currentIdxSong
+                
+                            if(currentIndexPlaylist === playlistSong.length - 1) {
+                                currentIdxSong = 0
+                            } else {
+                                currentIdxSong = currentIndexPlaylist + 1
+                            }
+                
+                            dispatch(setCurrentIndexPlayList(currentIdxSong))
+                            dispatch(changeIconPlay(true))
+                            dispatch(setSongId(playlistSong[currentIdxSong].encodeId))
+                        }
+                    }
                 }
             } catch (err) {
                 console.log(err)
             }
         })()
-    }, [songId, dispatch, handleNextSong])
+    }, [songId, dispatch, currentIndexPlaylist])
 
     return (
         <>
@@ -96,6 +96,7 @@ const Playing = () => {
                 }}
                 onLoadedData={() => {
                     if (audioRef.current) {
+                        dispatch(changeIconPlay(true))
                         dispatch(setDuration(audioRef.current.duration))
                     }
                 }}

@@ -33,13 +33,31 @@ const PlaylistCover = ({ title, link, thumbnail, sortDescription }) => {
                 </div>
             </div>
 
-            <div className='text-[color:var(--text-highlight)] mt-2 text-sm font-bold hover:underline truncate'>
+            <div className='text-[color:var(--text-highlight)] mt-2 text-sm font-bold hover:underline'
+            style={{
+                maxWidth: '100%',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 2,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+            }}
+            >
                 <Link to={link}>
                     {title}
                 </Link>
             </div>
 
-            <div className='text-[color:var(--text-base)] text-xs truncate'>
+            <div className='mt-1 text-[color:var(--text-base)] text-xs'
+            style={{
+                maxWidth: '100%',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 2,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+            }}
+            >
                 <span className=''>{sortDescription}</span>
             </div>
         </div>

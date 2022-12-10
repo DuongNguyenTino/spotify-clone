@@ -38,7 +38,7 @@ const TrackPlaylist = ({ items }) => {
                             'flex items-center truncate p-2 rounded-lg transition-all duration-300 ' +
                             (e.streamingStatus === 1
                                 ? 'cursor-pointer'
-                                : 'cursor-default hover:bg-[black]') +
+                                : 'cursor-default hover:bg-[color:var(--background-press)]') +
                             (currentIndexPlaylist === i && songId === e.encodeId
                                 ? ' bg-[color:var(--background-press)]'
                                 : ' hover:bg-[color:var(--background-model-hover-items)]')
