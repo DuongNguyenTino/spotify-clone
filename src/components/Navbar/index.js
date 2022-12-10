@@ -24,7 +24,7 @@ const Navbar = () => {
     const [active, setActive] = useState('')
 
     useEffect(() => {
-        const rl = activeUrl.split('4200')[1].split('/')[1]
+        const rl = activeUrl.split('/')[3]
         setActive(rl)
     }, [activeUrl])
 

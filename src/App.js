@@ -9,7 +9,7 @@ function App() {
         <div className='overflow-hidden'>
             <Sidebar/>
             <Navbar />
-            <div className='main lg:ml-80 ml-64 mt-16 mb-32'>
+            <div className='lg:ml-80 ml-64 mt-16 mb-32'>
                 <Router />
             </div>
             <Playing />

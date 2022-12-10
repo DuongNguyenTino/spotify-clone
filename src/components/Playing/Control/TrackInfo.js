@@ -8,7 +8,6 @@ const TrackInfo = () => {
 
   return(
     <div className="flex items-center">
-      {/* Thumbnail */}
       <img
         src={info.thumbnail}
         alt={info.title}
@@ -18,11 +17,9 @@ const TrackInfo = () => {
           animation: `${isPlay ? 'spinImg 5s linear infinite' : ''}`
         }}
       />
-      {/* End Thumbnail */}
 
-      {/* Info */}
       <div className="flex flex-col justify-center h-[46px] ml-3">
-        <div className="font-semibold text-lg text-[color:var(--text-highlight)] opacity-90 mb-1 truncate cursor-default">{info.title}</div>
+        <div className="font-semibold text-lg text-[color:var(--text-highlight)] opacity-90 mb-1 truncate cursor-default capitalize">{info.title}</div>
         <div className="flex text-[color:var(--text-base)] text-xs opacity-60">
         {
           info.artists &&
@@ -44,7 +41,6 @@ const TrackInfo = () => {
         }
         </div>
       </div>
-      {/* End Info */}
     </div>
   )
 }

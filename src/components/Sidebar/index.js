@@ -45,7 +45,7 @@ const Sidebar = () => {
                         to={'/'}
                         className="flex mb-2 pt-2 pb-2"             
                     >
-                        {active === '' || active === 'playlist' ? (
+                        {active === ''? (
                             <HomeSolid setColor="var(--text-highlight)" />
                         ) : (
                             <HomeOutline setColor="var(--text-base)" />
