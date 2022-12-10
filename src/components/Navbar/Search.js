@@ -39,6 +39,7 @@ const Search = () => {
                     setWidth="28"
                     onClick={() => {
                         setValueSearch('')
+                        navigate('/search')
                         refSearch.current.focus()
                     }}
                 />
