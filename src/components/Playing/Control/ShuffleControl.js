@@ -17,7 +17,7 @@ const ShuffleControl = ({ audioRef }) => {
 
     return (
         <button
-            className="mr-8 my-0 w-8 h-8 rounded-md flex justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]"
+            className="lg:mr-8 mr-2 my-0 w-8 h-8 rounded-md sm:flex hidden justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]"
             title="Shuffle"
             onClick={handleShuffle}
         >

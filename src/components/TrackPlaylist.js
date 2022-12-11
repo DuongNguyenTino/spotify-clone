@@ -10,7 +10,7 @@ import {
     setCurrentIndexPlayList,
 } from '../store/audioSlice'
 
-const TrackPlaylist = ({ items }) => {
+const TrackPlaylist = ({ items, categary }) => {
     const currentIndexPlaylist = useSelector(
         (state) => state.audio.currentIndexPlaylist
     )
@@ -44,29 +44,53 @@ const TrackPlaylist = ({ items }) => {
                                 : ' hover:bg-[color:var(--background-model-hover-items)]')
                         }
                     >
-                        <div
-                            className="text-[color:var(--text)] mr-4"
-                            onClick={() => {
-                                handleClickPlaySong(
-                                    e.streamingStatus,
-                                    e.encodeId,
-                                    i
-                                )
-                            }}
-                        >
-                            <MusicIcon
-                                setColor={`${
-                                    currentIndexPlaylist === i &&
-                                    songId === e.encodeId
-                                        ? 'var(--color-primary)'
-                                        : 'var(--text-base)'
-                                }`}
-                                setHeight="42"
-                                setWidth="42"
-                            />
-                        </div>
+                        {categary === 'zingchart' ? (
+                            <div
+                                className={`sm:mr-4 mr-2
+                                ${i === 0 && 'text-[blue]'}
+                                ${i === 1 && 'text-[green]'}
+                                ${i === 2 && 'text-[red]'}
+                                text-[color:var(--text-base)]
+                                flex flex-col items-center justify-between
+                                font-bold text-2xl
+                                w-10
+                                `}
+                                onClick={() => {
+                                    handleClickPlaySong(
+                                        e.streamingStatus,
+                                        e.encodeId,
+                                        i
+                                    )
+                                }}
+                            >
+                                {i + 1}
+                                <p className='m-0 p-0 w-[6px] h-[6px] bg-[color:var(--text-base)] rounded-full'>   
+                                </p>
+                            </div>
+                        ) : (
+                            <div
+                                className="text-[color:var(--text)] sm:mr-4 mr-2"
+                                onClick={() => {
+                                    handleClickPlaySong(
+                                        e.streamingStatus,
+                                        e.encodeId,
+                                        i
+                                    )
+                                }}
+                            >
+                                <MusicIcon
+                                    setColor={`${
+                                        currentIndexPlaylist === i &&
+                                        songId === e.encodeId
+                                            ? 'var(--color-primary)'
+                                            : 'var(--text-base)'
+                                    }`}
+                                    className={`sm:w-11 sm:h-11 w-8 h-8`}
+                                />
+                            </div>
+                        )}
                         <img
-                            className="rounded-lg w-[46px] h-[46px] mr-5"
+                            className="rounded-lg sm:w-[46px] sm:h-[46px] w-[36px] h-[36px] mr-5"
                             src={e.thumbnail}
                             alt={e.title}
                             onClick={() => {
@@ -78,7 +102,7 @@ const TrackPlaylist = ({ items }) => {
                             }}
                         />
                         <div
-                            className="flex flex-1 flex-col"
+                            className="flex flex-1 flex-col truncate"
                             onClick={() => {
                                 handleClickPlaySong(
                                     e.streamingStatus,
@@ -89,7 +113,7 @@ const TrackPlaylist = ({ items }) => {
                         >
                             <div
                                 className={
-                                    'text-lg font-semibold truncate capitalize' +
+                                    'sm:text-lg text-md font-semibold truncate capitalize' +
                                     (currentIndexPlaylist === i &&
                                     songId === e.encodeId
                                         ? ' text-[color:var(--color-primary)]'
@@ -100,7 +124,7 @@ const TrackPlaylist = ({ items }) => {
                             </div>
                             <div
                                 className={
-                                    'mt-[2px] text-sm opacity-70 truncate font-medium' +
+                                    'mt-[2px] sm:text-sm text-xs opacity-70 truncate font-medium' +
                                     (currentIndexPlaylist === i &&
                                     songId === e.encodeId
                                         ? ' text-[color:var(--color-primary)]'
@@ -136,7 +160,7 @@ const TrackPlaylist = ({ items }) => {
                         </div>
                         <div
                             className={
-                                'font-medium ' +
+                                'font-medium sm:text-md text-sm' +
                                 (currentIndexPlaylist === i &&
                                 songId === e.encodeId
                                     ? ' text-[color:var(--color-primary)]'

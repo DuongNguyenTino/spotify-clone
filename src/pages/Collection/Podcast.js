@@ -20,10 +20,10 @@ const Podcast = () => {
                         setWidth="24"
                     />
                 </div>
-                <div className="mt-4 mb-8 text-3xl font-bold text-[color:var(--text-highlight)]">
+                <div className="mt-4 mb-8 text-3xl md:mx-0 mx-4 text-center font-bold text-[color:var(--text-highlight)]">
                     <span>Theo dõi podcast đầu tiên của bạn</span>
                 </div>
-                <div className="mb-4 text-md font-medium text-[color:var(--text-highlight)]">
+                <div className="mb-4 text-md md:mx-0 mx-4 text-center font-medium text-[color:var(--text-highlight)]">
                     <span>
                         Theo dõi podcast bạn yêu thích bằng cách nhấn vào nút
                         theo dõi.
@@ -65,7 +65,7 @@ const Podcast = () => {
                         </div>
                     )}
                 </div>
-                <div className="grid lg:grid-cols-4 md:grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
                     {DataPodcast.data.map((e, i) =>
                         !isDisplay && i >= 4 ? (
                             ''
@@ -78,7 +78,7 @@ const Podcast = () => {
                                     <div className="w-10/12 mx-auto">
                                         <img
                                             src={e.thumbnailM}
-                                            className="rounded-lg"
+                                            className="rounded-lg w-full"
                                             alt=""
                                         />
                                         <div className="mt-4 text-[color:var(--text-highlight)] font-medium truncate">

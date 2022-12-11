@@ -9,7 +9,7 @@ const Mv = ({e, i}) => {
             <div className="relative">
                 <Link to={`/mv/${e.encodeId}`}>
                     <img
-                        className="rounded-xl w-[100%] cursor-pointer"
+                        className="rounded-xl w-full cursor-pointer"
                         src={e.thumbnail}
                         alt=""
                         onMouseOver={() => {

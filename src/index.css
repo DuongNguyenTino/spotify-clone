@@ -47,6 +47,12 @@ body {
     background: var(--background-cardhover);
 }
 
+@media (max-width: 450px) {
+    .description {
+        display: none !important;
+    }
+}
+
 @keyframes lyric-up {
     from {
         transform: translateY(100%);

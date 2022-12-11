@@ -14,7 +14,7 @@ const initialState = {
     srcAudio: "",
     currentTime: 0,
     duration: 0,
-    volumn: Number(localStorage.getItem("volumn")) || 0.5,
+    volumn: Number(localStorage.getItem("volumn")) || 1,
     isLoop: false,
     isShuffle: false,
     autoPlay: false,

@@ -17,12 +17,12 @@ const SongSliderControl = ({ audioRef }) => {
     }
 
     return (
-        <div className="mb-[6px] w-full flex items-center">
-            <div className="text-xs font-bold text-[color:var(--text-base)] mx-2">
+        <div className="md:mb-[6px] mb-0 w-full flex items-center">
+            <div className="md:flex hidden text-xs font-bold text-[color:var(--text-base)] mx-2">
                 {formatTime(currentTime)}
             </div>
             <div
-                className="py-[6px] px-0 flex-1"
+                className="md:py-[6px] py-0 px-0 flex-1"
                 onMouseOver={() => handleActiveSliderDotHover(true)}
                 onMouseOut={() => handleActiveSliderDotHover(false)}
                 ref={sliderRef}
@@ -128,7 +128,7 @@ const SongSliderControl = ({ audioRef }) => {
                     </div>
                 </div>
             </div>
-            <div className="text-xs font-bold text-[color:var(--text-base)] mx-2">
+            <div className="md:flex hidden text-xs font-bold text-[color:var(--text-base)] mx-2">
                 {formatTime(duration)}
             </div>
         </div>

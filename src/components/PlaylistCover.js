@@ -5,7 +5,7 @@ const PlaylistCover = ({ title, link, thumbnail, sortDescription }) => {
     const [isHoverImg, setIsHoverImg] = useState(false)
 
     return (
-        <div className=' mt-6'>
+        <div className='w-full mt-6'>
             <div className='relative'>
                 <Link to={link}>
                     <img

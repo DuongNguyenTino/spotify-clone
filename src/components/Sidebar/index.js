@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../../static/Logo'
+import LogoIcon from '../../static/LogoIcon'
 import { Link, NavLink } from 'react-router-dom'
 import { HomeOutline, HomeSolid } from '../../static/HomeIcon'
 import { MvOutline, MvSolid } from '../../static/MvIcon'
@@ -15,11 +16,17 @@ const Sidebar = () => {
     const songId = useSelector((state) => state.audio.songId)
     const activeUrl = useSelector((state) => state.audio.activeUrl)
     const [active, setActive] = useState('')
+    const [isPhone, setIsPhone] = useState(window.screen.width)
     
     useEffect(() => {
         const rl = activeUrl.split('/')[3]
         setActive(rl)
     }, [activeUrl])
+
+    useEffect(() => {
+        const width = window.screen.width
+        setIsPhone(width)
+    },[])
 
     const handleClick = () => {
         const url = window.location.href
@@ -30,32 +37,35 @@ const Sidebar = () => {
     }
 
     return (
-        <div className={`flex-none lg:w-80 w-64 fixed top-0 left-0 ${songId ? 'bottom-20' : 'bottom-0'} z-10 bg-black p-6`}>
-            <div className="lg:w-64 w32" onClick={() => handleClick()}>
+        <div className={`flex-none lg:w-80 md:w-64 w-16 fixed top-0 left-0 
+        ${songId ? 'bottom-20' : 'bottom-0'} z-10 bg-black sm:p-6 p-5 px-1
+        `}>
+            <div className="flex justify-center items-center" onClick={() => handleClick()}>
                 <Link to={'/'} >
                     <Logo />
                 </Link>
             </div>
-            <div className="border-b mt-10 pb-4">
+            <div className="border-b md:mt-10 mt-8 pb-4">
                 <div
-                    className="text-[color:var(--text-base)]"
+                    className=""
                     onClick={() => handleClick()}
                 >
                     <NavLink
                         to={'/'}
-                        className="flex mb-2 pt-2 pb-2"             
+                        className="flex md:flex-row flex-col md:justify-start justify-center items-center mb-2 pt-2 pb-2
+                        "             
                     >
                         {active === ''? (
-                            <HomeSolid setColor="var(--text-highlight)" />
+                            <HomeSolid setColor="var(--text-highlight)"/>
                         ) : (
                             <HomeOutline setColor="var(--text-base)" />
                         )}
                         <span
                             className={`${
-                                active === '' || active === 'playlist'
+                                active === ''
                                     ? 'text-[color:var(--text-highlight)]'
                                     : 'text-[color:var(--text-base)]'
-                            } font-bold text-md ml-4`}
+                            } font-bold lg:text-lg md:text-md text-xs md:ml-4 ml-0 whitespace-nowrap`}
                         >
                             Trang chủ
                         </span>
@@ -68,7 +78,7 @@ const Sidebar = () => {
                 >
                     <NavLink
                         to={'/search'}
-                        className="flex mb-2 pt-2 pb-2"
+                        className="flex md:flex-row flex-col md:justify-start justify-center items-center mb-2 pt-2 pb-2"
                         
                     >
                         {active === 'search' ? (
@@ -81,7 +91,7 @@ const Sidebar = () => {
                                 active === 'search'
                                     ? 'text-[color:var(--text-highlight)]'
                                     : 'text-[color:var(--text-base)]'
-                            } font-bold text-md ml-4`}
+                            } font-bold lg:text-lg md:text-md text-xs md:ml-4 ml-0 whitespace-nowrap`}
                         >
                             Tìm kiếm
                         </span>
@@ -94,7 +104,7 @@ const Sidebar = () => {
                 >
                     <NavLink
                         to={'/zingchart'}
-                        className="flex mb-2 pt-2 pb-2"
+                        className="flex md:flex-row flex-col md:justify-start justify-center items-center mb-2 pt-2 pb-2"
                         
                     >
                         {active === 'zingchart' ? (
@@ -107,7 +117,7 @@ const Sidebar = () => {
                                 active === 'zingchart'
                                     ? 'text-[color:var(--text-highlight)]'
                                     : 'text-[color:var(--text-base)]'
-                            } font-bold text-md ml-4`}
+                            } font-bold lg:text-lg md:text-md text-xs md:ml-4 ml-0 whitespace-nowrap`}
                         >
                             Zing chart
                         </span>
@@ -120,7 +130,7 @@ const Sidebar = () => {
                 >
                     <NavLink
                         to={'/mv'}
-                        className="flex mb-2 pt-2 pb-2"
+                        className="flex md:flex-row flex-col md:justify-start justify-center items-center mb-2 pt-2 pb-2"
                         
                     >
                         {active === 'mv' ? (
@@ -133,7 +143,7 @@ const Sidebar = () => {
                                 active === 'mv'
                                     ? 'text-[color:var(--text-highlight)]'
                                     : 'text-[color:var(--text-base)]'
-                            } font-bold text-md ml-4`}
+                            } font-bold lg:text-lg md:text-md text-xs md:ml-4 ml-0 whitespace-nowrap`}
                         >
                             MV
                         </span>
@@ -146,7 +156,7 @@ const Sidebar = () => {
                 >
                     <NavLink
                         to={'/top100'}
-                        className="flex mb-2 pt-2 pb-2"
+                        className="flex md:flex-row flex-col md:justify-start justify-center items-center mb-2 pt-2 pb-2"
                         
                     >
                         {active === 'top100' ? (
@@ -159,7 +169,7 @@ const Sidebar = () => {
                                 active === 'top100'
                                     ? 'text-[color:var(--text-highlight)]'
                                     : 'text-[color:var(--text-base)]'
-                            } font-bold text-md ml-4`}
+                            } font-bold lg:text-lg md:text-md text-xs md:ml-4 ml-0 whitespace-nowrap`}
                         >
                             Top 100
                         </span>
@@ -172,7 +182,7 @@ const Sidebar = () => {
                 >
                     <NavLink
                         to={'/collection/playlist'}
-                        className="flex mb-2 pt-2 pb-2"
+                        className="flex md:flex-row flex-col md:justify-start justify-center items-center mb-2 pt-2 pb-2"
                         
                     >
                         {active === 'collection' ? (
@@ -185,7 +195,7 @@ const Sidebar = () => {
                                 active === 'collection'
                                     ? 'text-[color:var(--text-highlight)]'
                                     : 'text-[color:var(--text-base)]'
-                            } font-bold text-md ml-4`}
+                            } font-bold lg:text-lg md:text-md text-xs md:ml-4 ml-0 whitespace-nowrap`}
                         >
                             Thư viện
                         </span>

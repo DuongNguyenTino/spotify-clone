@@ -18,7 +18,7 @@ const Home = () => {
     return (
         <>
             <main className="">
-                <div className="ml-6 mr-6 pt-1">
+                <div className="ml-6 mr-6 md:pt-1 pt-0.5">
                     {dataTop100 && loader ? (
                         dataTop100.map((e, i) => (
                             <div key={i}>
@@ -28,7 +28,7 @@ const Home = () => {
                                         : e.title}
                                         <ArrowRight setColor='white' setHeight='40' setWidth='40'/>
                                 </div>
-                                <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-4 mb-8">
+                                <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mb-8">
                                     {e.items.map((element, index) => (
                                         <PlaylistCover
                                             key={index}

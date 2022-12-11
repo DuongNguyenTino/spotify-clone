@@ -14,10 +14,10 @@ const Artist = () => {
                 <div className="mb-12 mt-20">
                     <ArtistIcon setColor="white" setHeight="64" setWidth="64" />
                 </div>
-                <div className="mb-8 text-3xl font-bold text-[color:var(--text-highlight)]">
-                    <span>Theo dõi nghệ sĩ đầu tiên cuat bạn</span>
+                <div className="mb-8 text-3xl md:mx-0 mx-4 text-center font-bold text-[color:var(--text-highlight)]">
+                    <span>Theo dõi nghệ sĩ đầu tiên của bạn</span>
                 </div>
-                <div className="text-md font-medium text-[color:var(--text-highlight)]">
+                <div className="md:mx-0 mx-4 text-center text-md font-medium text-[color:var(--text-highlight)]">
                     <span>Theo dõi nghệ sĩ bạn yêu thích bằng cách nhấn vào nút theo dõi.</span>
                 </div>
                 <div className="mt-8 mb-4">

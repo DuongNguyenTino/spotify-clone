@@ -7,20 +7,23 @@ const TrackInfo = () => {
   const info = useSelector((state) => state.audio.infoSongPlayer)
 
   return(
-    <div className="flex items-center">
+    <div className="flex items-center w-full">
       <img
         src={info.thumbnail}
         alt={info.title}
-        className={`h-16 rounded-full object-contains
+        className={`h-[56px] w-[56px] rounded-full object-contains
         `}
         style={{
           animation: `${isPlay ? 'spinImg 5s linear infinite' : ''}`
         }}
       />
 
-      <div className="flex flex-col justify-center h-[46px] ml-3">
-        <div className="font-semibold text-lg text-[color:var(--text-highlight)] opacity-90 mb-1 truncate cursor-default capitalize">{info.title}</div>
-        <div className="flex text-[color:var(--text-base)] text-xs opacity-60">
+      <div className="flex flex-col justify-center h-[46px] ml-3 lg:w-60 w-40">
+        <div className="font-semibold xl:text-lg text-[color:var(--text-highlight)] opacity-90 mb-1 cursor-default capitalize
+        lg:text-md truncate
+        "
+        >{info.title}</div>
+        <div className="flex text-[color:var(--text-base)] text-xs opacity-60 truncate">
         {
           info.artists &&
           info.artists.map((e, i) => {

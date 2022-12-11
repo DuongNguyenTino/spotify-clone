@@ -14,10 +14,13 @@ const Control = ({ audioRef }) => {
 
   return (
     <>
-      <div className="grid grid-cols-3 h-full mx-[3vw] z-[-1]">
+    <div className="md:hidden">
+      <SongSliderControl audioRef={audioRef}/>
+    </div>
+      <div className="md:grid md:grid-cols-3 flex items-center justify-between h-full mx-[3vw] z-[-1]">
         <TrackInfo />
 
-        <div className="flex flex-col justify-evenly items-center">
+        <div className="flex sm:flex-col sm:justify-evenly justify-end items-center">
           <div className="flex justify-center items-center">    
             <ShuffleControl audioRef={audioRef}/>
             <PrevControl />
@@ -25,10 +28,12 @@ const Control = ({ audioRef }) => {
             <NextControl />
             <RepeatControl />
           </div>
-          <SongSliderControl audioRef={audioRef}/>
+          <div className="md:block hidden w-full">
+            <SongSliderControl audioRef={audioRef}/>
+          </div>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="md:flex hidden justify-end items-center">
           <LyricControl />
           <div className="flex justify-between items-center">
             <VolumnControl audioRef={audioRef} />

@@ -14,10 +14,10 @@ const Playlist = () => {
                 <div className="mb-12 mt-20">
                     <MusicIcon setColor="white" setHeight="64" setWidth="64" />
                 </div>
-                <div className="mb-8 text-3xl font-bold text-[color:var(--text-highlight)]">
+                <div className="mb-8 text-3xl md:mx-0 mx-4 text-center font-bold text-[color:var(--text-highlight)]">
                     <span>Tạo playlist đầu tiên của bạn</span>
                 </div>
-                <div className="text-md font-medium text-[color:var(--text-highlight)]">
+                <div className="text-md md:mx-0 mx-4 text-center font-medium text-[color:var(--text-highlight)]">
                     <span>Thật dễ dàng, chúng tôi sẽ giúp bạn.</span>
                 </div>
                 <div className="mt-8 mb-4">

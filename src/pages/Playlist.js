@@ -32,9 +32,9 @@ const Playlist = () => {
             <div className="mx-[5vw] mt-24">
                 {detailPlaylist ? (
                     <>
-                        <div className="flex md:flex-row sm:flex-col my-[72px]">
+                        <div className="flex md:flex-row sm:flex-col sm:my-[72px] mb-8">
                             <div className="relative xl:min-w-[288px] xl:min-h-[288px]
-                            md:min-w-[200px] md:min-h-[200px]
+                            md:min-w-[200px] md:min-h-[200px] sm:w-full sm:h-full min-w-[140px] min-h-[140px] h-[140px] w-[140px]
                             ">
                                 <img
                                     className="rounded-xl w-full h-full"
@@ -48,15 +48,15 @@ const Playlist = () => {
                                     }}
                                 ></div>
                             </div>
-                            <div className="flex flex-col justify-between lg:ml-14 md:ml-6 md:mt-0 sm:mt-6">
-                                <div className="xl:text-4xl lg:text-2xl md:text-xl font-bold text-[color:var(--text-highlight)]">
+                            <div className="flex flex-col justify-between lg:ml-14 md:ml-6 ml-2 md:mt-0 sm:mt-6">
+                                <div className="xl:text-4xl lg:text-2xl md:text-xl text-md font-bold text-[color:var(--text-highlight)]">
                                     {detailPlaylist.title}
                                 </div>
 
-                                <div className="lg:text-lg md:text-sm mt-6">
-                                    <span className=" opacity-80 text-[color:var(--text-base)] ">
+                                <div className="lg:text-lg md:text-sm text-xs sm:mt-6 my-2">
+                                    {detailPlaylist.artists && <span className="opacity-80 text-[color:var(--text-base)] ">
                                         Playlist by{' '}
-                                    </span>
+                                    </span>}
                                     {detailPlaylist.artists &&
                                         detailPlaylist.artists.map((e, i) => {
                                             return (
@@ -77,29 +77,30 @@ const Playlist = () => {
                                         })}
                                 </div>
 
-                                <div className="hidden lg:flex items-center text-sm opacity-70 font-medium text-[color:var(--text-base)] mt-[2px]">
-                                    <span className="mr-3">
+                                <div className="flex lg:flex-row flex-col items-center sm:text-sm text-xs opacity-70 font-medium text-[color:var(--text-base)] mt-[2px]">
+                                    {detailPlaylist.contentLastUpdate && <span className="md:mr-3 mr-0">
                                         Updated at{' '}
                                         {new Date(
                                             detailPlaylist.contentLastUpdate *
                                                 1000
                                         ).toLocaleDateString('vi-VN')}
-                                    </span>
-                                    <span className="mr-3">
+                                    </span>}
+                                    {detailPlaylist.total && <span className="mr-3">
                                         {detailPlaylist.total} Songs
-                                    </span>
-                                    <span className="flex items-center">
+                                    </span>}
+                                    {detailPlaylist.like && <span className="flex items-center">
                                         <IconHeart
                                             setColor="var(--color-primary)"
                                             setWidth="16px"
                                             setHeight="16px"
+                                            className='relative top-0.5'
                                         />
                                         {detailPlaylist.like}
-                                    </span>
+                                    </span>}
                                 </div>
 
                                 <div
-                                    className="text-sm opacity-70 font-medium text-[color:var(--text-base)] mt-6"
+                                    className="description text-sm opacity-70 font-medium text-[color:var(--text-base)] mt-6"
                                     style={{
                                         maxWidth: '100%',
                                         display: '-webkit-box',
@@ -114,6 +115,7 @@ const Playlist = () => {
 
                             </div>
                         </div>
+
                         <TrackPlaylist items={detailPlaylist.song.items} />
                     </>
                 ) : (

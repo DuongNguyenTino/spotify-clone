@@ -25,7 +25,7 @@ const PrevControl = () => {
     }
 
     return (
-        <button className='w-8 h-8 rounded-md flex justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]' title='Previous' onClick={handlePrevSong}>
+        <button className='w-8 h-8 rounded-md sm:flex hidden justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]' title='Previous' onClick={handlePrevSong}>
             <IconPrev setColor='var(--text-highlight)' setHeight='20' setWidth='20'/>
         </button>  
     )

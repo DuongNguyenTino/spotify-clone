@@ -56,8 +56,10 @@ const Artist = () => {
         <div className="mx-[5vw] mt-8">
             {detailsArtist ? (
                 <>
-                    <div className="flex mb-20">
-                        <div className="relative max-w-[320px] max-h-[320px] min-w-[248px] min-h-[248px]">
+                    <div className="flex md:flex-row flex-col items-center md:mb-20 mb-10">
+                        <div className="relative md:max-w-[320px] md:max-h-[320px] md:min-w-[248px] md:min-h-[248px]
+                        max-w-[240px] max-h-[240px] min-w-[180px] min-h-[180px] md:mt-0 mt-6
+                        ">
                             <img
                                 className="rounded-full w-full h-full"
                                 src={detailsArtist.thumbnailM}
@@ -71,25 +73,25 @@ const Artist = () => {
                             ></div>
                         </div>
 
-                        <div className="flex flex-col justify-center ml-20">
-                            <div className="text-4xl font-bold text-[color:var(--text-base)]">
+                        <div className="flex flex-col justify-center items-center md:ml-20 ml-0">
+                            <div className="md:text-4xl text-3xl md:mt-0 mt-4 font-bold text-[color:var(--text-base)]">
                                 {detailsArtist.name}
                             </div>
 
-                            <div className="text-lg opacity-70 font-medium text-[color:var(--text-base)] mt-6">
+                            {detailsArtist.realname && <div className="text-lg opacity-70 font-medium text-[color:var(--text-base)] mt-6">
                                 Real Name: {detailsArtist.realname}
-                            </div>
+                            </div>}
 
                             <div className="flex items-center text-sm opacity-70 font-medium text-[color:var(--text-base)] mt-[2px]">
-                                <span className="mr-3">
+                                {detailsArtist.birthday && <span className="mr-3">
                                     Birthday: {detailsArtist.birthday}
-                                </span>
-                                <span className="flex items-center">
+                                </span>}
+                                {detailsArtist.totalFollow && <span className="flex items-center">
                                     Total Follow: {detailsArtist.totalFollow}
-                                </span>
+                                </span>}
                             </div>
 
-                            <div
+                            {detailsArtist.sortBiography && <div
                                 className="text-sm text-justify opacity-70 font-medium text-[color:var(--text-base)] mt-6"
                                 style={{
                                     maxWidth: '100%',
@@ -101,24 +103,29 @@ const Artist = () => {
                                 }}
                             >
                                 {detailsArtist.sortBiography}
-                            </div>
+                            </div>}
                         </div>
                     </div>
                     {listArtistSong ? (
-                        <InfiniteScroll
-                            dataLength={listArtistSong.items.length}
-                            next={fetchMoreSongArtist}
-                            hasMore={hasMore}
-                            loader={
-                                <Loading
-                                    setColor="white"
-                                    setHeight="24"
-                                    setWidth="24"
-                                />
-                            }
-                        >
-                            <TrackPlaylist items={listArtistSong.items} />
-                        </InfiniteScroll>
+                        <>
+                            <div className='text-2xl font-medium text-[color:var(--text-highlight)] mb-4 ml-1'>
+                                <span>Bài Hát Nổi Bật</span>
+                            </div>
+                            <InfiniteScroll
+                                dataLength={listArtistSong.items.length}
+                                next={fetchMoreSongArtist}
+                                hasMore={hasMore}
+                                loader={
+                                    <Loading
+                                        setColor="white"
+                                        setHeight="24"
+                                        setWidth="24"
+                                    />
+                                }
+                            >
+                                <TrackPlaylist items={listArtistSong.items} />
+                            </InfiniteScroll>
+                        </>
                     ) : (
                         <Loading
                             setColor="white"

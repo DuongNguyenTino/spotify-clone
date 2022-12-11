@@ -8,7 +8,7 @@ const Home = () => {
     const [dataHome, setdataHome] = useState([])
 
     useEffect(() => {
-        (async () => {
+        ;(async () => {
             setdataHome(await getHomePlayList())
             setLoader(true)
         })()
@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <>
             <main className="">
-                <div className="lg:ml-6 md:ml-[36px] mr-6 pt-1">
+                <div className="lg:ml-6 md:ml-8 ml-6 mr-6 pt-1 overflow-hidden">
                     {dataHome && loader ? (
                         dataHome.map((e, i) => (
                             <div key={i}>
@@ -26,7 +26,7 @@ const Home = () => {
                                         ? e.sectionId.slice(1)
                                         : e.title}
                                 </div>
-                                <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-4 mb-8">
+                                <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8 overflow-x-auto">
                                     {e.items.map((element, index) => (
                                         <PlaylistCover
                                             key={index}
@@ -40,9 +40,14 @@ const Home = () => {
                                     ))}
                                 </div>
                             </div>
-                        ))) : (
-                            <Loading setColor='white' setHeight='30' setWidth='30' />
-                        )}
+                        ))
+                    ) : (
+                        <Loading
+                            setColor="white"
+                            setHeight="30"
+                            setWidth="30"
+                        />
+                    )}
                 </div>
             </main>
         </>
