@@ -43,7 +43,7 @@ const Navbar = () => {
             }
         `}
         >
-            <div className="flex items-center justify-between h-full lg:ml-8 md:ml-4 ml-2 mr-2">
+            <div className="flex items-center justify-between h-full lg:ml-8 md:ml-4 mx-1">
                 <div className="flex">
                     <button
                         className="sm:block hidden bg-[color:var(--background-card)] hover:bg-[color:var(--background-press)] transition duration-300 rounded-full mr-2"
@@ -112,7 +112,7 @@ const Navbar = () => {
                              : 'bg-[color:var(--background-press)]'
                      }
                       hover:bg-[color:var(--background-cardhover)] transition ease-in duration-200 rounded-full
-                     p-1 md:pr-2 text-sm font-bold ml-4`}
+                     p-1 md:pr-2 text-sm font-bold sm:ml-4 ml-1`}
                         ref={refButtonModel}
                         onClick={() => setIsOpenModel(true)}
                     >
