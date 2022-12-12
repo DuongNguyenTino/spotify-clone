@@ -53,6 +53,10 @@ body {
     }
 }
 
+.lyric_scroll::-webkit-scrollbar {
+    width: 0;
+}
+
 @keyframes lyric-up {
     from {
         transform: translateY(100%);

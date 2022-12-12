@@ -8,7 +8,8 @@ const VolumnControl = ({audioRef}) => {
     const dispatch = useDispatch()
     const isMute = useSelector((state) => state.audio.isMute)
 
-    const handleVolumnSong = () => {
+    const handleVolumnSong = (e) => {
+        e.stopPropagation()
         if(isMute) {
             dispatch(changeIconVolumn(false))
             dispatch(setVolumn(

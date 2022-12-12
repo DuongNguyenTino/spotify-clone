@@ -10,8 +10,9 @@ import {
     changeIconPlay,
     setSongId,
     setCurrentIndexPlayList,
+    setOpenLyric
 } from '../../store/audioSlice'
-// import Lyric from "./Lyric"
+import Lyric from "./Lyric"
 
 const Playing = () => {
     const songId = useSelector((state) => state.audio.songId)
@@ -23,8 +24,8 @@ const Playing = () => {
     const currentIndexPlaylist = useSelector(
         (state) => state.audio.currentIndexPlaylist
     )
+    
     const playlistSong = useSelector((state) => state.audio.playlistSong)
-
     const dispatch = useDispatch()
 
     const audioRef = useRef('')
@@ -76,7 +77,10 @@ const Playing = () => {
     return (
         <>
             {songId ? (
-                <div className="flex flex-col justify-around h-20 backdrop-saturate-[150%] backdrop-blur-[50px] bg-[color:var(--background-card)] fixed inset-x-0 bottom-0 z-[100]">
+                <div className="flex flex-col justify-around h-20 backdrop-saturate-[150%] backdrop-blur-[50px] bg-[color:var(--background-card)] fixed inset-x-0 bottom-0 z-[300]
+                "
+                onClick={() => dispatch(setOpenLyric(true))}
+                >
                     <Controls audioRef={audioRef.current} />
                 </div>
             ) : (
@@ -137,7 +141,7 @@ const Playing = () => {
                     }
                 }}
             />
-            {/* <Lyric auRef={audioRef.current}/> */}
+            <Lyric audioRef={audioRef.current}/>
         </>
     )
 }

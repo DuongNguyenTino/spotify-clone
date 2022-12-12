@@ -6,8 +6,10 @@ import { setShuffle } from '../../../store/audioSlice'
 const ShuffleControl = ({ audioRef }) => {
     const isShuffle = useSelector((state) => state.audio.isShuffle)
     const dispatch = useDispatch()
+    const isLyric = useSelector((state) => state.audio.isLyric)
 
-    const handleShuffle = () => {
+    const handleShuffle = (e) => {
+        e.stopPropagation()
         if (isShuffle) {
             dispatch(setShuffle(false))
         } else {
@@ -17,7 +19,9 @@ const ShuffleControl = ({ audioRef }) => {
 
     return (
         <button
-            className="lg:mr-8 mr-2 my-0 w-8 h-8 rounded-md sm:flex hidden justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]"
+            className={"lg:mr-8 mr-2 my-0 w-8 h-8 rounded-md sm:flex justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]"
+        + (isLyric ? ' flex w-12 h-12': ' hidden')
+        }
             title="Shuffle"
             onClick={handleShuffle}
         >
@@ -25,8 +29,8 @@ const ShuffleControl = ({ audioRef }) => {
                 setColor={`${
                     isShuffle ? 'var(--color-primary)' : 'var(--text-base)'
                 }`}
-                setWidth="16"
-                setHeight="16"
+                setWidth={isLyric ? ' 24' : '16'}
+                setHeight={isLyric ? ' 24' : '16'}
             />
         </button>
     )

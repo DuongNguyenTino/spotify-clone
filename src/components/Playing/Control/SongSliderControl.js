@@ -17,7 +17,9 @@ const SongSliderControl = ({ audioRef }) => {
     }
 
     return (
-        <div className="md:mb-[6px] mb-0 w-full flex items-center">
+        <div className="md:mb-[6px] mb-0 w-full flex items-center"
+        onClick={(e) => e.stopPropagation()}
+        >
             <div className="md:flex hidden text-xs font-bold text-[color:var(--text-base)] mx-2">
                 {formatTime(currentTime)}
             </div>

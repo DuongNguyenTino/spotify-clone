@@ -7,8 +7,10 @@ const NextControl = () => {
     const dispatch = useDispatch()
     const currentIndexPlaylist = useSelector((state) => state.audio.currentIndexPlaylist)
     const playlistSong = useSelector((state) => state.audio.playlistSong)
+    const isLyric = useSelector((state) => state.audio.isLyric)
 
-    const handleNextSong = () => {
+    const handleNextSong = (e) => {
+        e.stopPropagation()
         if(playlistSong !== undefined && playlistSong.length > 0) {
             let currentIdxSong
 
@@ -25,8 +27,9 @@ const NextControl = () => {
     }
 
     return (
-        <button className='w-8 h-8 rounded-md flex justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]' title='Next' onClick={handleNextSong}>
-            <IconNext setColor='var(--text-highlight)' setHeight='20' setWidth='20'/>
+        <button className={'w-8 h-8 rounded-md flex justify-center items-center trasition-colors duration-300 hover:bg-[color:var(--background-model-hover-items)]'
+        + (isLyric ? ' w-14 h-14': '')} title='Next' onClick={handleNextSong}>
+            <IconNext setColor='var(--text-highlight)' setHeight={isLyric ? '28' : '20'} setWidth={isLyric ? '28' : '20'}/>
         </button>  
     )
 }

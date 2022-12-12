@@ -42,7 +42,7 @@ const Sidebar = () => {
         `}>
             <div className="flex justify-center items-center" onClick={() => handleClick()}>
                 <Link to={'/'} >
-                    <Logo />
+                    {isPhone < 767 ? <LogoIcon setColor='white' setHeight='48' setwidth='48' /> : <Logo />}
                 </Link>
             </div>
             <div className="border-b md:mt-10 mt-8 pb-4">

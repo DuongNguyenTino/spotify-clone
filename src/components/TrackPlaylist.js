@@ -8,6 +8,7 @@ import {
     changeIconPlay,
     setAutoPlay,
     setCurrentIndexPlayList,
+    setOpenLyric
 } from '../store/audioSlice'
 
 const TrackPlaylist = ({ items, categary }) => {
@@ -18,6 +19,10 @@ const TrackPlaylist = ({ items, categary }) => {
     const songId = useSelector((state) => state.audio.songId)
 
     const dispatch = useDispatch()
+
+    const handleOpenLyric = () => {
+        dispatch(setOpenLyric(true))
+    }
 
     const handleClickPlaySong = (streamingStatus, encodeId, currentIndex) => {
         if (streamingStatus === 1) {
@@ -43,6 +48,7 @@ const TrackPlaylist = ({ items, categary }) => {
                                 ? ' bg-[color:var(--background-press)]'
                                 : ' hover:bg-[color:var(--background-model-hover-items)]')
                         }
+                        onClick={handleOpenLyric}
                     >
                         {categary === 'zingchart' ? (
                             <div

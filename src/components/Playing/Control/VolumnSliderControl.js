@@ -17,7 +17,9 @@ const SongSliderControl = ({ audioRef }) => {
     }
 
     return (
-        <div className="my-[-6px] w-24">
+        <div className="my-[-6px] w-24"
+        onClick={(e) => e.stopPropagation()}
+        >
             <div
                 className="py-[6px] px-0"
                 onMouseOver={() => handleActiveSliderDotHover(true)}
