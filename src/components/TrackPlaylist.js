@@ -20,10 +20,6 @@ const TrackPlaylist = ({ items, categary }) => {
 
     const dispatch = useDispatch()
 
-    const handleOpenLyric = () => {
-        dispatch(setOpenLyric(true))
-    }
-
     const handleClickPlaySong = (streamingStatus, encodeId, currentIndex) => {
         if (streamingStatus === 1) {
             dispatch(setSongId(encodeId))
@@ -48,7 +44,6 @@ const TrackPlaylist = ({ items, categary }) => {
                                 ? ' bg-[color:var(--background-press)]'
                                 : ' hover:bg-[color:var(--background-model-hover-items)]')
                         }
-                        onClick={handleOpenLyric}
                     >
                         {categary === 'zingchart' ? (
                             <div

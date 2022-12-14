@@ -112,7 +112,7 @@ const Navbar = () => {
                              : 'bg-[color:var(--background-press)]'
                      }
                       hover:bg-[color:var(--background-cardhover)] transition ease-in duration-200 rounded-full
-                     p-1 md:pr-2 text-sm font-bold sm:ml-4 ml-1`}
+                     p-1 lg:pr-2 text-sm font-bold sm:ml-4 ml-1`}
                         ref={refButtonModel}
                         onClick={() => setIsOpenModel(true)}
                     >
