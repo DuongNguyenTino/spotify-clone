@@ -91,7 +91,7 @@ const Playing = () => {
                 src={srcAudio}
                 className="hidden"
                 loop={isLoop}
-                autoPlay={isPlay}
+                autoPlay={true}
                 hidden
                 onTimeUpdate={() => {
                     if (audioRef.current) {
@@ -100,7 +100,7 @@ const Playing = () => {
                 }}
                 onLoadedData={() => {
                     if (audioRef.current) {
-                        dispatch(changeIconPlay(isPlay))
+                        dispatch(changeIconPlay(true))
                         dispatch(setDuration(audioRef.current.duration))
                     }
                 }}
