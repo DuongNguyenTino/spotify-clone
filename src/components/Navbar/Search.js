@@ -7,6 +7,7 @@ const Search = () => {
     const [valueSearch, setValueSearch] = useState('')
     const refSearch = useRef(null)
     const navigate = useNavigate()
+    const [isSearch, setIsSearch] = useState(false)
 
     return (
         <div
@@ -25,8 +26,12 @@ const Search = () => {
                 type="text"
                 name="Search"
                 placeholder="Bạn muốn nghe gì?"
-                className="sm:ml-2 ml-0 text-sm text-[color:var(--background-cardhover)] focus:border-0 border-none outline-none"
+                className={"sm:ml-2 sm:w-full ml-0 text-sm text-[color:var(--background-cardhover)] focus:border-0 border-none outline-none"
+                + (isSearch ? ' w-32': ' w-12')
+            }
                 value={valueSearch}
+                onFocus={() => setIsSearch(true)}
+                onBlur={() => setIsSearch(false)}
                 onChange={(e) => {
                     setValueSearch(e.target.value)
                     e.target.value.trim() !== '' ? navigate(`/search/${e.target.value}`) : navigate('/search')

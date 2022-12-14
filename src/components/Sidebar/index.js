@@ -37,7 +37,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className={`flex-none lg:w-80 md:w-64 w-16 fixed top-0 left-0 
+        <div className={`flex-none lg:w-80 md:w-64 w-16 fixed z-[100] top-0 left-0 
         ${songId ? 'bottom-20' : 'bottom-0'} z-10 bg-black sm:p-6 p-5 px-1
         `}>
             <div className="flex justify-center items-center" onClick={() => handleClick()}>

@@ -6,6 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import ArrowRight from '../components/Icons/ArrowRight'
 import SearchIcon from '../components/Icons/Search'
 import CloseIcon from '../components/Icons/Close'
+import { useScroll } from '../hook/useScroll'
 
 const Mv = () => {
     const [dataListMV, setDataListMV] = useState([])
@@ -14,6 +15,8 @@ const Mv = () => {
     const refSearch = useRef()
     const [valueSearch, setValueSearch] = useState('')
     const [isSearch, setIsSearch] = useState(false)
+    const [scrollDimensions] = useScroll()
+    const { scrollY } = scrollDimensions
 
     useEffect(() => {
         ;(async () => {
@@ -39,11 +42,13 @@ const Mv = () => {
     }
 
     return (
-        <div className={"pt-8  px-[4vw]" 
+        <div className={"pt-4 px-[4vw]" 
         + (hasMore ? ' pb-80': ' pb-4')}>
             {dataListMV ? (
                 <>
-                    <div className="flex items-center justify-between mb-8 ml-1">
+                    <div className={"flex items-center py-4 mb-4"
+                + (scrollY > 28 ? ' ml-0 fixed top-16 lg:left-80 md:left-64 left-16 right-0 z-[50] bg-[color:var(--background-base)] shadow-sm shadow-[color:var(--text-base)] justify-around': ' ml-1 justify-between')
+                }>
                         <div className={"sm:flex flex items-center lg:text-2xl text-xl text-[color:var(--text-highlight)]"
                     + (isSearch ? ' hidden': ' ')
                     }>

@@ -77,7 +77,7 @@ const Playing = () => {
     return (
         <>
             {songId ? (
-                <div className="flex flex-col justify-around h-20 backdrop-saturate-[150%] backdrop-blur-[50px] bg-[color:var(--background-card)] fixed inset-x-0 bottom-0 z-[300]
+                <div className="flex flex-col justify-around h-20 bg-[color:var(--background-card)] fixed inset-x-0 bottom-0 z-[300]
                 "
                 onClick={() => dispatch(setOpenLyric(true))}
                 >
