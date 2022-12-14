@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Mv = ({e, i}) => {
+const Mv = ({ search, e, i}) => {
     const [isCoverHover, setIsCoverHover] = useState(false)
 
     return (
-        <div key={i}>
+        search && <div key={i}>
             <div className="relative">
                 <Link to={`/mv/${e.encodeId}`}>
                     <img
@@ -37,7 +37,7 @@ const Mv = ({e, i}) => {
                 <div className="text-base font-semibold text-[color:var(--text-highlight)] truncate hover:underline">
                     <Link to={`/mv/${e.encodeId}`}>{e.title}</Link>
                 </div>
-                <div className="text-sm opacity-60 text-[color:var(--text-base)]">
+                <div className="text-sm opacity-60 text-[color:var(--text-base)] truncate">
                     {e.artists &&
                         e.artists.map((e, i) => {
                             return (

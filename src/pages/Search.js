@@ -45,14 +45,14 @@ const Search = () => {
                                 className="relative top-0.5"
                             />
                         </div>
-                        <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-6">
+                        <div className="sm:grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 gap-6 flex flex-wrap">
                             {DataNoSearch.data.map((e, i) => (
                                 <div
                                     key={i}
                                     className="w-full flex justify-center items-center"
                                 >
                                     <div
-                                        className="rounded-xl xl:h-52 xl:w-52 lg:h-48 lg:w-48 h-48 w-48 overflow-hidden relative"
+                                        className="rounded-xl xl:h-52 xl:w-52 sm:h-48 sm:w-48 h-full w-full overflow-hidden relative"
                                         style={{
                                             background: `${e.color}`,
                                         }}

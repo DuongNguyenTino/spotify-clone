@@ -10,10 +10,10 @@ const Search = () => {
 
     return (
         <div
-            className="sm:ml-12 ml-0 relative flex items-center bg-white 
+            className="sm:ml-12 ml-2 relative flex items-center bg-white 
                     rounded-full"
         >
-            <label className="sm:ml-2 ml-0 sm:px-2 pl-2 mt-0.5">
+            <label className="sm:ml-2 ml-0.5 sm:px-2 pl-2 mt-0.5">
                 <SearchIcon
                     setColor="var(--background-cardhover)"
                     setHeight="24"
@@ -32,7 +32,7 @@ const Search = () => {
                     e.target.value.trim() !== '' ? navigate(`/search/${e.target.value}`) : navigate('/search')
                 }}
             />
-            <span className="sm:mr-2 mr-0 sm:px-2 pl-2 mt-0.5 ">
+            <span className="sm:mr-2 mr-0.5 sm:px-2 pl-2 mt-0.5 ">
                 <CloseIcon
                     setColor="#000"
                     setHeight="28"

@@ -57,6 +57,10 @@ body {
     width: 0;
 }
 
+.noneScrollX::-webkit-scrollbar {
+    display: none;
+}
+
 @keyframes lyric-up {
     from {
         transform: translateY(100%);

@@ -9,7 +9,7 @@ const PlaylistCover = ({ title, link, thumbnail, sortDescription }) => {
             <div className='relative'>
                 <Link to={link}>
                     <img
-                        className="w-full rounded-lg"
+                        className="md:min-w-[135px] min-w-[162px] w-full h-full rounded-lg object-contains"
                         src={thumbnail}
                         onMouseOver={() => {
                             setIsHoverImg(true)
