@@ -36,7 +36,7 @@ const Navbar = () => {
 
     return (
         <div
-            className={`fixed z-20 top-0 lg:left-80 md:left-64 left-16 right-0 border-b h-16 text-white transition duration-400 ${
+            className={`fixed z-[200] top-0 lg:left-80 md:left-64 left-16 right-0 border-b h-16 text-white transition duration-400 ${
                 scrollY > 64
                     ? 'bg-[color:var(--background-active-scroll)]'
                     : 'bg-[color:var(--background-base)]'

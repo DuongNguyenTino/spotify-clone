@@ -47,7 +47,7 @@ const Mv = () => {
             {dataListMV ? (
                 <>
                     <div className={"flex items-center py-4 mb-4"
-                + (scrollY > 28 ? ' ml-0 fixed top-16 lg:left-80 md:left-64 left-16 right-0 z-[50] bg-[color:var(--background-base)] shadow-sm shadow-[color:var(--text-base)] justify-around': ' ml-1 justify-between')
+                + (scrollY > 28 ? ' ml-0 fixed top-16 lg:left-80 md:left-64 left-16 right-0 z-50 bg-[color:var(--background-base)] shadow-sm shadow-[color:var(--text-base)] justify-around': ' ml-1 justify-between')
                 }>
                         <div className={"sm:flex flex items-center lg:text-2xl text-xl text-[color:var(--text-highlight)]"
                     + (isSearch ? ' hidden': ' ')
@@ -64,7 +64,7 @@ const Mv = () => {
                             className="ml-2 relative flex items-center bg-white 
                 rounded-full"
                         >
-                            <label className="md:ml-2 ml-0.5 md:px-2 pl-2 mt-0.5">
+                            <label className="md:ml-2 ml-0.5 md:px-2 pl-2 mt-0.5" htmlFor='search'>
                                 <SearchIcon
                                     setColor="var(--background-cardhover)"
                                     setHeight="24"
@@ -73,6 +73,7 @@ const Mv = () => {
                             </label>
                             <input
                                 ref={refSearch}
+                                id='search'
                                 type="text"
                                 name="Search Mv"
                                 placeholder="Mv bạn muốn tìm là gì?"

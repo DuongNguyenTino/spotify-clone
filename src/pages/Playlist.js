@@ -33,7 +33,7 @@ const Playlist = () => {
                 {detailPlaylist ? (
                     <>
                         <div className="flex flex-row sm:my-[72px] mb-8">
-                            <div className="relative xl:min-w-[288px] xl:min-h-[288px]
+                            <div className="relative max-w-[320px] max-h-[320px] xl:min-w-[288px] xl:min-h-[288px]
                             md:min-w-[200px] md:min-h-[200px] sm:w-full sm:h-full min-w-[140px] min-h-[140px] h-[140px] w-[140px]
                             ">
                                 <img

@@ -6,7 +6,6 @@ const SearchOutline = ({setColor, ...orthers}) => {
             role="img"
             height="24"
             width="24"
-            aria-hidden="true"
             fill='none'
             viewBox="0 0 24 24"
             {...orthers}
@@ -23,7 +22,6 @@ const SearchSolid = ({setColor, ...orthers}) => {
             role="img"
             height="24"
             width="24"
-            aria-hidden="true"
             fill='none'
             viewBox="0 0 24 24"
             {...orthers}

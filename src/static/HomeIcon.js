@@ -5,7 +5,6 @@ const HomeOutline = ({setColor, ...orthers}) => {
             role="img"
             height='24'
             width='24'
-            aria-hidden="true"
             fill='none'
             viewBox="0 0 24 24"
             {...orthers}
@@ -22,7 +21,6 @@ const HomeSolid = ({setColor, ...orthers}) => {
         role="img"
         height='24'
         width='24'
-        aria-hidden="true"
         fill='none'
         viewBox="0 0 24 24"
         {...orthers}

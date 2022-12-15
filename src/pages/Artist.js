@@ -58,7 +58,7 @@ const Artist = () => {
                 <>
                     <div className="flex md:flex-row flex-col items-center md:mb-20 mb-10">
                         <div className="relative md:max-w-[320px] md:max-h-[320px] md:min-w-[248px] md:min-h-[248px]
-                        max-w-[240px] max-h-[240px] min-w-[180px] min-h-[180px] md:mt-0 mt-6
+                        max-w-[240px] max-h-[240px] min-w-[180px] min-h-[180px] md:mt-8 mt-6
                         ">
                             <img
                                 className="rounded-full w-full h-full"

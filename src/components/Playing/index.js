@@ -47,7 +47,7 @@ const Playing = () => {
                             dispatch(
                                 setInfoSongPlayer({
                                     title: infoSong.title,
-                                    thumbnail: infoSong.thumbnail,
+                                    thumbnail: infoSong.thumbnailM,
                                     artistsNames: infoSong.artistsNames,
                                     artists: infoSong.artists,
                                 })

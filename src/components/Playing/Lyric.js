@@ -156,7 +156,7 @@ const Lyric = ({ audioRef }) => {
                         <img
                             src={info.thumbnail}
                             alt={info.title}
-                            className={`m-auto mt-20 h-[320px] w-[320px] rounded-full object-contains`}
+                            className={`m-auto mt-20 max-h-[320px] max-w-[320px] rounded-full object-contains`}
                             style={{
                                 animation: `${
                                     isPlay ? 'spinImg 6s linear infinite' : ''
@@ -168,7 +168,7 @@ const Lyric = ({ audioRef }) => {
                                 {info.title}
                             </div>
                             <div
-                                className="flex text-[color:var(--text-base)] items-center justify-center text-2xl opacity-60 my-8"
+                                className="flex flex-wrap text-[color:var(--text-base)] items-center justify-center text-2xl opacity-60 my-8"
                                 onClick={(e) => {
                                     e.stopPropagation()
                                     handleCloseLyric()
@@ -180,7 +180,7 @@ const Lyric = ({ audioRef }) => {
                                             <span key={i}>
                                                 {i > 0 ? <span>, </span> : ''}
                                                 <Link
-                                                    className="underline"
+                                                    className="underline text-center"
                                                     to={`/artist/${e.alias}`}
                                                 >
                                                     {e.name}

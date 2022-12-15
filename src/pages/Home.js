@@ -26,7 +26,7 @@ const Home = () => {
                                         ? e.sectionId.slice(1)
                                         : e.title}
                                 </div>
-                                <div className="noneScrollX sm:grid lg:grid-cols-5 sm:grid-cols-3 flex gap-4 mb-8 sm:overflow-x-auto overflow-x-scroll">
+                                <div className="noneScrollX sm:grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 flex gap-4 mb-8 sm:overflow-x-auto overflow-x-scroll">
                                     {e.items.map((element, index) => (
                                         <PlaylistCover
                                             key={index}
