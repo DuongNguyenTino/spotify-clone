@@ -30,7 +30,8 @@ const Navbar = () => {
 
     useEffect(() => {
         window.onclick = (e) => {
-            if (!refButtonModel.current.contains(e.target)) setIsOpenModel(false)
+            if (!refButtonModel.current.contains(e.target))
+                setIsOpenModel(false)
         }
     }, [])
 
@@ -60,21 +61,23 @@ const Navbar = () => {
                             setWidth="35"
                         />
                     </button>
-                    {active !== 'search' && active !== 'collection' && <button
-                        className="sm:hidden bg-[color:var(--background-card)] hover:bg-[color:var(--background-press)] transition duration-300 rounded-full mr-2"
-                        onClick={() => {
-                            navigate(-1)
-                            setTimeout(() => {
-                                dispatch(setActiveUrl(window.location.href))
-                            }, 100)
-                        }}
-                    >
-                        <ArrowLeft
-                            setColor="white"
-                            setHeight="35"
-                            setWidth="35"
-                        />
-                    </button>}
+                    {active !== 'search' && active !== 'collection' && (
+                        <button
+                            className="sm:hidden bg-[color:var(--background-card)] hover:bg-[color:var(--background-press)] transition duration-300 rounded-full mr-2"
+                            onClick={() => {
+                                navigate(-1)
+                                setTimeout(() => {
+                                    dispatch(setActiveUrl(window.location.href))
+                                }, 100)
+                            }}
+                        >
+                            <ArrowLeft
+                                setColor="white"
+                                setHeight="35"
+                                setWidth="35"
+                            />
+                        </button>
+                    )}
                     <button
                         className="sm:block hidden bg-[color:var(--background-card)] hover:bg-[color:var(--background-press)] transition duration-300 rounded-full"
                         onClick={() => {
@@ -94,16 +97,21 @@ const Navbar = () => {
                 </div>
                 {active === 'collection' && <ContactLibrary />}
                 <div className="flex relative">
-                    {active !== 'search' && active !== 'collection' && <button
-                        className="
+                    {active !== 'search' && active !== 'collection' && (
+                        <button
+                            className="
                     "
-                    >
-                        <a href='https://www.facebook.com/profile.php?id=100033986333586' target='__blank'
-                        className='bg-[color:var(--background-card)] hover:bg-[color:var(--background-press)] transition ease-in duration-200 rounded-full
-                        border border-[color:var(--text-base)] p-2 sm:pl-4 sm:pr-4 pl-2 pr-2 sm:text-sm text-xs font-bold'>
-                            Nâng cấp
-                        </a>
-                    </button>}
+                        >
+                            <a
+                                href="https://www.facebook.com/profile.php?id=100033986333586"
+                                target="__blank"
+                                className="bg-[color:var(--background-card)] hover:bg-[color:var(--background-press)] transition ease-in duration-200 rounded-full
+                        border border-[color:var(--text-base)] p-2 sm:pl-4 sm:pr-4 pl-2 pr-2 sm:text-sm text-xs font-bold"
+                            >
+                                Nâng cấp
+                            </a>
+                        </button>
+                    )}
                     <button
                         className={`flex items-center
                      ${
@@ -122,20 +130,22 @@ const Navbar = () => {
                             alt="avt"
                             ref={refButtonModel}
                         />
-                        <span className="ml-1 mr-1 lg:block hidden">Duong Nguyen</span>
+                        <span className="ml-1 mr-1 lg:block hidden">
+                            Duong Nguyen
+                        </span>
                         {isOpenModel ? (
                             <ArrowUp
                                 setColor="white"
                                 setHeight="20"
                                 setWidth="20"
-                                className='lg:visible hidden'
+                                className="lg:visible hidden"
                             />
                         ) : (
                             <ArrowDown
                                 setColor="white"
                                 setHeight="20"
                                 setWidth="20"
-                                className='lg:visible hidden'
+                                className="lg:visible hidden"
                                 onClick={() => setIsOpenModel(true)}
                             />
                         )}
